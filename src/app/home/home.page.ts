@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-home',
@@ -15,13 +16,16 @@ export class HomePage implements OnInit {
     error: null
   };
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private storage: Storage) {
     this.form = new FormGroup({
       user: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
   }
   ngOnInit() {
+    if (localStorage.getItem('isLoggedin')) {
+       this.router.navigate(['/login/home']);
+    }
     this.status.data = false;
     this.status.loading = false;
     this.status.error = false;
@@ -36,6 +40,7 @@ export class HomePage implements OnInit {
       if (values.user === 'test@gmail.com' && values.password === '123') {
         this.status.loading = false;
         this.status.data = true;
+        localStorage.setItem('isLoggedin', 'true');
         this.router.navigate(['/login/home']);
       } else {
         this.status.loading = false;
