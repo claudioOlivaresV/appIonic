@@ -1,0 +1,7 @@
+{
+  "name": "acceso",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
