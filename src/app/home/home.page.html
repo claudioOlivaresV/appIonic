@@ -21,7 +21,7 @@
   </div> -->
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Bienvenidos</ion-card-title>
+      <ion-card-title>Bienvenidos  {{id}}</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
@@ -46,6 +46,7 @@
           </ion-button>
           <ion-label *ngIf="status.error" class="text-danger mt-3 text-center">Usuario o Cantraseña incorrectos</ion-label>
         </section>
+       
 
       </form>
    

@@ -5,6 +5,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { Uid } from '@ionic-native/uid/ngx';
+import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
 
 
 @NgModule({
@@ -15,6 +18,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     HomePageRoutingModule,
     ReactiveFormsModule
   ],
+  providers: [UniqueDeviceID, Uid,
+    AndroidPermissions,],
   declarations: [HomePage]
 })
 export class HomePageModule {}

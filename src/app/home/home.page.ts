@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+
 
 @Component({
   selector: 'app-home',
@@ -15,8 +17,16 @@ export class HomePage implements OnInit {
     loading: null,
     error: null
   };
+  id: any = 'no';
 
-  constructor(private router: Router, private storage: Storage) {
+  constructor(private router: Router, private storage: Storage, private uniqueDeviceID: UniqueDeviceID) {
+    this.uniqueDeviceID.get()
+  .then((uuid: any) => {
+    console.log(uuid);
+    this.id = uuid;
+  }
+  )
+  .catch((error: any) => console.log(error));
     this.form = new FormGroup({
       user: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
