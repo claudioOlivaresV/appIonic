@@ -29,7 +29,7 @@ export class HomePage implements OnInit {
   .catch((error: any) => console.log(error));
     this.form = new FormGroup({
       user: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
+      
     });
   }
   ngOnInit() {

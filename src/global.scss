@@ -25,6 +25,31 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.botton {
-    background: #d37815 !important;
-  }
+
+.bg {
+    background-color:#F7F8FA !important;
+}
+h2, h1, h3,h4, h5, h6 {
+    color: #3E4775 !important;
+}
+p{
+    color: #8B95AE;
+
+}
+body{
+    font-family: Helvetica !important;
+}
+.btn-primary{
+    background-color: #7FA4FF !important;
+    border-color:  #7FA4FF !important;
+    border-radius: 200px !important;
+
+}
+.seccion{
+    border-radius: 100px !important;
+}
+.input{
+    background-color: white;
+    color: #8B95AE;
+    border-radius: 100px !important;
+}
