@@ -18,7 +18,7 @@ export class HomePage implements OnInit {
   constructor(private router: Router) {
     this.form = new FormGroup({
       user: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
+      
     });
   }
   ngOnInit() {
